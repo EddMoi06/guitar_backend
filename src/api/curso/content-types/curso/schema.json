@@ -4,7 +4,8 @@
   "info": {
     "singularName": "curso",
     "pluralName": "cursos",
-    "displayName": "Cursos"
+    "displayName": "Cursos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,18 +16,19 @@
       "type": "string",
       "required": true
     },
-    "contenido": {
-      "type": "blocks"
-    },
     "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "contenido": {
+      "type": "richtext"
     }
   }
 }

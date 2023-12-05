@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post"
+    "displayName": "Post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,23 +16,24 @@
       "type": "text",
       "required": true
     },
-    "contenido": {
-      "type": "blocks"
-    },
     "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "Url": {
+    "url": {
       "type": "uid",
       "targetField": "titulo",
       "required": true
+    },
+    "contenido": {
+      "type": "richtext"
     }
   }
 }

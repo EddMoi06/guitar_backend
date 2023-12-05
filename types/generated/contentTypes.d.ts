@@ -683,14 +683,15 @@ export interface ApiCursoCurso extends Schema.SingleType {
     singularName: 'curso';
     pluralName: 'cursos';
     displayName: 'Cursos';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     titulo: Attribute.String & Attribute.Required;
-    contenido: Attribute.Blocks;
     imagen: Attribute.Media;
+    contenido: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -725,7 +726,7 @@ export interface ApiGuitarraGuitarra extends Schema.CollectionType {
     descripcion: Attribute.RichText;
     precio: Attribute.Integer;
     imagen: Attribute.Media & Attribute.Required;
-    Url: Attribute.UID<'api::guitarra.guitarra', 'nombre'>;
+    url: Attribute.UID<'api::guitarra.guitarra', 'nombre'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -750,15 +751,16 @@ export interface ApiPostPost extends Schema.CollectionType {
     singularName: 'post';
     pluralName: 'posts';
     displayName: 'Post';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     titulo: Attribute.Text & Attribute.Required;
-    contenido: Attribute.Blocks;
     imagen: Attribute.Media;
-    Url: Attribute.UID<'api::post.post', 'titulo'> & Attribute.Required;
+    url: Attribute.UID<'api::post.post', 'titulo'> & Attribute.Required;
+    contenido: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
